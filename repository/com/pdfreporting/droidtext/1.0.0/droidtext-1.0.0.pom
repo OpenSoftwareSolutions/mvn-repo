@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <name>DroidText</name>
+   <groupId>com.pdfreporting</groupId>
+   <artifactId>droidtext</artifactId>
+   <version>1.0.0</version>
+   <description>This project is a port of the itext library version 2.1.7 (last LGPL version) for Android.Parts of the following open source projects are combined to create the port: iText 2.1.7: http://sourceforge.net/projects/itext/, Apache Harmony: http://harmony.apache.org/, BouncyCastle: http://www.bouncycastle.org/</description>
+   <url>https://github.com/OpenSoftwareSolutions/DroidText</url>
+   <licenses>
+      <license>
+         <name>GNU LESSER GENERAL PUBLIC LICENSE Version 3, 29 June 2007</name>
+         <url>https://www.gnu.org/licenses/lgpl.txt</url>
+      </license>
+   </licenses>
+   <developers>
+      <developer>
+         <name>Daniel Novak</name>
+         <email>novak@inloop.eu</email>
+         <organization>Open Software Solutions</organization>
+         <organizationUrl>http://www.pdfreporting.com</organizationUrl>
+      </developer>
+   </developers>
+   <scm>
+      <connection>scm:git:git@github.com:OpenSoftwareSolutions/DroidText.git</connection>
+      <developerConnection>scm:git:git@github.com:OpenSoftwareSolutions/DroidText.git.git</developerConnection>
+      <url>https://github.com/OpenSoftwareSolutions/DroidText.git</url>
+   </scm>
+   
+  <dependencies>
+	  <dependency>
+		<groupId>com.google.android</groupId>
+		<artifactId>android</artifactId>
+		<version>4.1.1.4</version>
+		<scope>provided</scope>
+	  </dependency>
+	  <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+		 <version>4.12</version>
+      </dependency>
+  </dependencies>
+	
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+   
+   <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>	
+
+	<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-source-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>attach-sources</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+	</plugin>
+		
+    </plugins>
+  </build>
+</project>

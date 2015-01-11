@@ -1,0 +1,8 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Sun Jan 11 21:19:46 CET 2015
+41688ecac764289d942fe893db6788344a12be69@default-https\://ida.inmite.eu/nexus/content/groups/clients-private/.lastUpdated=1421007585902
+http\://repo.maven.apache.org/maven2/.lastUpdated=1421007586103
+https\://ida.inmite.eu/nexus/content/groups/clients-private/.error=Could not transfer artifact com.pdfreporting\:droidtext\:pom\:1.1.1 from/to inmite-private (https\://ida.inmite.eu/nexus/content/groups/clients-private)\: Access denied to\: https\://ida.inmite.eu/nexus/content/groups/clients-private/com/pdfreporting/droidtext/1.1.1/droidtext-1.1.1.pom , ReasonPhrase\:Forbidden.
+http\://repo.maven.apache.org/maven2/.error=
+https\://ida.inmite.eu/nexus/content/groups/clients/.lastUpdated=1421007585722
+https\://ida.inmite.eu/nexus/content/groups/clients/.error=

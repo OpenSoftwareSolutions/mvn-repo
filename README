@@ -1,0 +1,11 @@
+Maven repo for Open Software Solutions GmbH.
+
+How to use:
+Add repository to your build.gradle:
+ 
+repositories {
+    mavenCentral()
+    maven {
+        url "https://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/"
+    }
+}
