@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.oss</groupId>
+  <artifactId>evaluator</artifactId>
+  <versioning>
+    <release>1.0.0Beta</release>
+    <versions>
+      <version>1.0.0Beta</version>
+    </versions>
+    <lastUpdated>20150313080213</lastUpdated>
+  </versioning>
+</metadata>
