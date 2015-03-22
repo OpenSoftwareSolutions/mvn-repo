@@ -3,10 +3,11 @@
   <groupId>org.oss</groupId>
   <artifactId>evaluator</artifactId>
   <versioning>
-    <release>1.0.0Beta</release>
+    <release>1.0.0</release>
     <versions>
       <version>1.0.0Beta</version>
+      <version>1.0.0</version>
     </versions>
-    <lastUpdated>20150313080213</lastUpdated>
+    <lastUpdated>20150322214851</lastUpdated>
   </versioning>
 </metadata>
