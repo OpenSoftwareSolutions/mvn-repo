@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.pdfreporting</groupId>
+    <artifactId>pdfreporter-application</artifactId>
+    <version>1.1.4-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<repositories>
+		<repository>
+			<id>OpenSoftwareSolutionsMvn</id>
+			<name>your custom repo</name>
+			<url>https://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/</url>
+		</repository>
+	</repositories>
+  
+	
+	 <build>
+        <plugins>
+            <plugin>
+                <inherited>true</inherited>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>pdfreporter-core</module>
+        <module>pdfreporter-extensions</module>
+        <module>pdfreporter-android</module>
+		<module>pdfreporter-portable</module>
+		<module>pdfreporter-test-portable</module>
+		<module>pdfreporter-android-bundle</module>
+		<module>pdfreporter-java-desktop</module>
+		<module>pdfreporter-java-shared</module>
+		<module>pdfreporter-test</module>
+		<module>pdfreporter-testdata</module>
+    </modules>
+</project>
