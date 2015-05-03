@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sun May 03 11:16:21 CEST 2015
+default-"https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/"/.lastUpdated=1430643727343
+"https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/"/.error=Could not transfer artifact com.pdfreporting\:pdfreporter-java-desktop-bundle\:pom\:1.1.5-SNAPSHOT from/to OpenSoftwareSolutionsMvn ("https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/")\: Cannot access "https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/" with type default using the available connector factories\: BasicRepositoryConnectorFactory
+@default-OpenSoftwareSolutionsMvn-"https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/"/.lastUpdated=1430644581944
