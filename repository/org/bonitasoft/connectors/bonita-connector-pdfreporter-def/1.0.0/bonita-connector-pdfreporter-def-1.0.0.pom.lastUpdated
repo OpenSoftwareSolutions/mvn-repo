@@ -1,0 +1,10 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Sat May 02 10:41:50 CEST 2015
+default-"https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/"/.lastUpdated=1430556110227
+http\://repo.maven.apache.org/maven2/.lastUpdated=1430555636870
+"https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/"/.error=Could not transfer artifact org.bonitasoft.connectors\:bonita-connector-pdfreporter-def\:pom\:1.0.0 from/to my-repo1 ("https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/")\: No connector available to access repository my-repo1 ("https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/") of type default using the available factories AsyncRepositoryConnectorFactory, WagonRepositoryConnectorFactory
+https\://repository.jboss.org/nexus/content/groups/public/.lastUpdated=1430555636581
+http\://jarsm2.dyndns.dk/.error=Could not transfer artifact org.bonitasoft.connectors\:bonita-connector-pdfreporter-def\:pom\:1.0.0 from/to my-repo1 (http\://jarsm2.dyndns.dk)\: null to http\://jarsm2.dyndns.dk/org/bonitasoft/connectors/bonita-connector-pdfreporter-def/1.0.0/bonita-connector-pdfreporter-def-1.0.0.pom
+http\://repo.maven.apache.org/maven2/.error=
+https\://repository.jboss.org/nexus/content/groups/public/.error=
+default-http\://jarsm2.dyndns.dk/.lastUpdated=1430556083349

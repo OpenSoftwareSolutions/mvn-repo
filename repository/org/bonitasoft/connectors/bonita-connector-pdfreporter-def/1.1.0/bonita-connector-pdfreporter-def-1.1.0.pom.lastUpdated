@@ -1,0 +1,8 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Sun May 31 14:33:49 CEST 2015
+http\://repo.maven.apache.org/maven2/.lastUpdated=1433075629645
+default-"https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/"/.lastUpdated=1433075627419
+"https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/"/.error=Could not transfer artifact org.bonitasoft.connectors\:bonita-connector-pdfreporter-def\:pom\:1.1.0 from/to OpenSoftwareSolutionsMvn ("https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/")\: No connector available to access repository OpenSoftwareSolutionsMvn ("https\://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/") of type default using the available factories AsyncRepositoryConnectorFactory, WagonRepositoryConnectorFactory
+https\://repository.jboss.org/nexus/content/groups/public/.lastUpdated=1433075629045
+http\://repo.maven.apache.org/maven2/.error=
+https\://repository.jboss.org/nexus/content/groups/public/.error=
