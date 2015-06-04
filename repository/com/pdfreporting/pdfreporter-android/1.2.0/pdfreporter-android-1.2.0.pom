@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.pdfreporting</groupId>
+  <artifactId>pdfreporter-android</artifactId>
+  <version>1.2.0</version>
+  <packaging>jar</packaging>
+  <parent>
+        <groupId>com.pdfreporting</groupId>
+        <artifactId>pdfreporter-application</artifactId>
+        <version>1.2.0</version>
+        <relativePath>../pom.xml</relativePath>
+  </parent>
+  
+   <properties>
+    <!-- at test time this will be overridden with snapshot version -->
+    <it-plugin.version>4.0.0</it-plugin.version>
+  </properties>
+  
+  <dependencies>
+  
+	  <dependency>
+	      <groupId>com.google.android</groupId>
+	      <artifactId>android</artifactId>
+	      <version>4.1.1.4</version>
+	      <scope>provided</scope>
+	    </dependency>
+  
+        <dependency>
+            <groupId>com.pdfreporting</groupId>
+            <artifactId>pdfreporter-core</artifactId>
+			<version>${project.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.pdfreporting</groupId>
+            <artifactId>pdfreporter-java-shared</artifactId>
+			<version>${project.version}</version>
+        </dependency>
+		
+		<dependency>
+            <groupId>com.pdfreporting</groupId>
+            <artifactId>pdfreporter-portable</artifactId>
+			<version>${project.version}</version>
+        </dependency>
+		
+		<dependency>
+			<groupId>com.pdfreporting</groupId>
+			<artifactId>droidtext</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+  </dependencies>
+  
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    
+   <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.simpligility.maven.plugins</groupId>
+
+          <artifactId>android-maven-plugin</artifactId>
+          <version>${it-plugin.version}</version>
+          <extensions>true</extensions>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+        <groupId>com.simpligility.maven.plugins</groupId>
+
+        <artifactId>android-maven-plugin</artifactId>
+        <configuration>
+          <sdk>
+            <platform>21</platform>
+          </sdk>
+        </configuration>
+      </plugin>
+      
+    </plugins>
+  </build>
+</project>
