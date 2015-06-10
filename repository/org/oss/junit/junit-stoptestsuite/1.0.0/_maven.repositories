@@ -1,0 +1,5 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Wed Jun 10 14:20:41 CEST 2015
+junit-stoptestsuite-1.0.0.jar>=
+junit-stoptestsuite-1.0.0-sources.jar>=
+junit-stoptestsuite-1.0.0.pom>=
