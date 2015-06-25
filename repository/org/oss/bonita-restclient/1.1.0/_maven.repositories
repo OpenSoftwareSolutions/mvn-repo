@@ -1,0 +1,5 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Thu Jun 25 13:39:04 CEST 2015
+bonita-restclient-1.1.0.pom>=
+bonita-restclient-1.1.0-javadoc.jar>=
+bonita-restclient-1.1.0.jar>=
