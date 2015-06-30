@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.oss.evaluator</groupId>
+    <artifactId>evaluator-application</artifactId>
+    <version>1.5.0</version>
+    <packaging>pom</packaging>
+
+	<licenses>
+  		<license>
+    			<name>Apache License, Version 2.0</name>
+    			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    			<distribution>repo</distribution>
+      		</license>
+	</licenses>
+
+	<organization>
+    		<name>Open Software Solutions GmbH</name>
+    		<url>http://www.open-software-solutions.ch</url>
+  	</organization>
+
+	<developers>
+    		<developer>
+      			<id>mkarlsson</id>
+      			<name>Magnus Karlsson</name>
+      			<email>mkarlsson@open-software-solutions.ch</email>
+      			<organization>OSS</organization>
+      			<organizationUrl>http://www.open-software-solutions.ch</organizationUrl>
+      			<roles>
+        			<role>architect</role>
+        			<role>developer</role>
+      			</roles>
+    		</developer>
+		<developer>
+      			<id>dmueller</id>
+      			<name>Donat Müller</name>
+      			<email>dmueller@open-software-solutions.ch</email>
+      			<organization>OSS</organization>
+      			<organizationUrl>http://www.open-software-solutions.ch</organizationUrl>
+      			<roles>
+        			<role>architect</role>
+        			<role>developer</role>
+      			</roles>
+    		</developer>
+  	</developers>
+
+ 	<issueManagement>
+    		<system>GitHub</system>
+    		<url>https://github.com/OpenSoftwareSolutions/jshuntingyard/issues</url>
+  	</issueManagement>
+	
+	<properties>
+   		 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	 <build>
+        <plugins>
+            <plugin>
+                <inherited>true</inherited>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>jshuntingyard</module>
+    </modules>
+</project>
