@@ -1,0 +1,201 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pdfreporting</groupId>
+	<artifactId>pdfreporter-application</artifactId>
+	<name>PDFReporter</name>
+	<version>1.3.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<url>http://pdfreporter.org</url>
+	<repositories>
+		<repository>
+			<id>OpenSoftwareSolutionsMvn</id>
+			<name>Open Software Solutions Mvn</name>
+			<url>https://github.com/OpenSoftwareSolutions/mvn-repo/raw/master/repository/</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+        <github.global.server>github</github.global.server>
+	</properties>
+<!-- run with:
+	export MAVEN_OPTS="-Xms1024m -Xmx1G -XX:PermSize=1024m -noverify"
+	mvn -fae install
+	mvn site -DskipTests
+ -->
+	<build>
+		<plugins>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>instrument</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<destFile>${session.executionRootDirectory}/target/${project.artifactId}.exec</destFile>
+						</configuration>
+					</execution>
+					<execution>
+						<id>merge</id>
+						<goals>
+							<goal>merge</goal>
+						</goals>
+						<configuration>
+							<fileSets>
+								<fileSet implementation="org.apache.maven.shared.model.fileset.FileSet">
+									<directory>${session.executionRootDirectory}/target</directory>
+									<includes>
+										<include>*.exec</include>
+									</includes>
+								</fileSet>
+							</fileSets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.11</version>
+                <configuration>
+                    <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+                    <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+                    <branch>refs/heads/test-repository</branch>                       <!-- remote branch name -->
+                    <includes><include>**/*</include></includes>
+                    <path>repository</path>
+                    <repositoryOwner>donat-mueller</repositoryOwner>    <!-- github username  -->
+                </configuration>
+                <executions>
+                    <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+		</plugins>
+	</build>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<aggregate>true</aggregate>
+					<showSuccess>true</showSuccess>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.4</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>3.6</version>
+				<configuration>
+					<targetJdk>1.7</targetJdk>
+					<format>xml</format>
+					<sourceEncoding>ISO-8859-1</sourceEncoding>
+					<minimumTokens>100</minimumTokens>
+					<excludes>
+						<exclude>**/generated/*.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>3.0.3</version>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<!-- select non-aggregate reports -->
+							<report>report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>taglist-maven-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<tags>
+						<tag>fixme</tag>
+						<tag>FixMe</tag>
+						<tag>FIXME</tag>
+						<tag>@todo</tag>
+						<tag>todo</tag>
+						<tag>TODO</tag>
+						<tag>xxx</tag>
+						<tag>@deprecated</tag>
+					</tags>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</reporting>
+    
+	<distributionManagement>
+   <repository>
+        <id>internal.repo</id>
+        <name>Temporary Staging Repository</name>
+        <url>file://${project.build.directory}/mvn-repo</url>
+    </repository>
+		<site>
+			<id>some-id</id>
+			<url>${project.url}</url>
+		</site>
+	</distributionManagement>
+
+
+	<modules>
+		<module>pdfreporter-extensions</module>
+		<module>pdfreporter-core</module>
+		<module>pdfreporter-java-shared</module>
+		<module>pdfreporter-portable</module>
+		<module>pdfreporter-android</module>
+		<module>pdfreporter-java-desktop</module>
+		<module>pdfreporter-test</module>
+		<module>pdfreporter-test-desktop</module>
+		<module>pdfreporter-test-jasperreports</module>
+		<module>pdfreporter-test-portable</module>
+		<module>pdfreporter-android-bundle</module>
+		<module>pdfreporter-java-desktop-bundle</module>
+<!-- 
+-->
+	</modules>
+    <scm>
+        <url>https://github.com/OpenSoftwareSolutions/mvn-repo</url>
+        <developerConnection>scm:git:git@github.com:OpenSoftwareSolutions/mvn-repo.git</developerConnection>
+    </scm>
+</project>
