@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>com.pdfreporting</groupId>
-  <artifactId>pdfreporter-portable</artifactId>
+  <artifactId>pdfreporter-android</artifactId>
   <versioning>
     <versions>
       <version>1.3.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170123202408</lastUpdated>
+    <lastUpdated>20170123202417</lastUpdated>
   </versioning>
 </metadata>
