@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>com.pdfreporting</groupId>
-  <artifactId>pdfreporter-java-desktop</artifactId>
+  <artifactId>pdfreporter-test</artifactId>
   <versioning>
     <versions>
       <version>1.3.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170123202427</lastUpdated>
+    <lastUpdated>20170123202436</lastUpdated>
   </versioning>
 </metadata>
