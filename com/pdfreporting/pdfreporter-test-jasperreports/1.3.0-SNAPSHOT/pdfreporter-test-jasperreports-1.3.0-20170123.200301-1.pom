@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>pdfreporter-test-desktop</artifactId>
+	<artifactId>pdfreporter-test-jasperreports</artifactId>
 	<packaging>jar</packaging>
 	<parent>
 		<groupId>com.pdfreporting</groupId>
@@ -10,10 +10,35 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
 		<dependency>
-			<groupId>com.pdfreporting</groupId>
-			<artifactId>pdfreporter-java-desktop</artifactId>
-			<version>${project.version}</version>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kenai.nbpwr</groupId>
+			<artifactId>com-sun-pdfview</artifactId>
+			<version>1.0.5-201003191900</version>
+			<type>nbm</type>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/xalan/xalan -->
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.pdfreporting</groupId>
@@ -24,13 +49,16 @@
 
 	<build>
 		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>src/test/org/oss/pdfreporter</testSourceDirectory>
+		<testSourceDirectory>src</testSourceDirectory>
 		<resources>
 			<resource>
 				<directory>src</directory>
 				<excludes>
 					<exclude>**/*.java</exclude>
 				</excludes>
+			</resource>
+			<resource>
+				<directory>resources</directory>
 			</resource>
 		</resources>
 		<plugins>
@@ -47,12 +75,12 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
 					<includes>
-						<include>**/DesktopSuiteCi.java</include>
+						<include>**/JasperSuiteCi.java</include>
 					</includes>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	<name>Test Desktop</name>
-	<description>Desktop test suite.</description>
+	<name>Test Jasperreports</name>
+	<description>Jasperreports test suite</description>
 </project>
