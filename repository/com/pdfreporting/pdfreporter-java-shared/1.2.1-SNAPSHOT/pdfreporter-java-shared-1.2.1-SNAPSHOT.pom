@@ -1,8 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.pdfreporting</groupId>
   <artifactId>pdfreporter-java-shared</artifactId>
-  <version>1.2.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <parent>
         <groupId>com.pdfreporting</groupId>
@@ -10,14 +8,14 @@
         <version>1.2.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
   </parent>
-  
+
   <dependencies>
         <dependency>
             <groupId>com.pdfreporting</groupId>
             <artifactId>pdfreporter-core</artifactId>
             <version>${project.version}</version>
         </dependency>
-        
+
         <dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
@@ -33,9 +31,9 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>2.0.5</version>
 		</dependency>
-        
+
    </dependencies>
-   
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
@@ -51,10 +49,17 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
+      <plugin>
+  		<groupId>org.apache.maven.plugins</groupId>
+  		<artifactId>maven-surefire-plugin</artifactId>
+  		<configuration>
+    		<skipTests>true</skipTests>
+  		</configuration>
+	  </plugin>
     </plugins>
   </build>
 </project>
